@@ -3,11 +3,27 @@ import pandas as pd
 import os
 import time
 
-st.set_page_config(page_title="LM WN AI Fast Track", layout="wide", page_icon="🛵")
+st.set_page_config(
+    page_title="LM WN AI Fast Track", 
+    layout="wide", 
+    page_icon="🛵",
+    initial_sidebar_state="collapsed"
+)
 
-# Mock Data (Pre-processed by AI Fast Track)
-if 'restaurants' not in st.session_state:
+# Function to initialize or reset mock data
+def init_mock_data():
     st.session_state.restaurants = [
+        {
+            "id": "RES-8803",
+            "name": "Chill Bar & Bistro", 
+            "status": "Requires Review", 
+            "risk": "Medium", 
+            "issue": "Agent B: Vision AI detected alcohol as the Hero Image (violates pg 4 of Checklist).", 
+            "image": "beer.png",
+            "agent_a_flag": False,
+            "agent_b_flag": True,
+            "agent_c_flag": False
+        },
         {
             "id": "RES-8801",
             "name": "Krapao Station", 
@@ -31,17 +47,6 @@ if 'restaurants' not in st.session_state:
             "agent_c_flag": False
         },
         {
-            "id": "RES-8803",
-            "name": "Chill Bar & Bistro", 
-            "status": "Requires Review", 
-            "risk": "Medium", 
-            "issue": "Agent B: Vision AI detected alcohol as the Hero Image (violates pg 4 of Checklist).", 
-            "image": "beer.png",
-            "agent_a_flag": False,
-            "agent_b_flag": True,
-            "agent_c_flag": False
-        },
-        {
             "id": "RES-8804",
             "name": "Noodle Express", 
             "status": "Requires Review", 
@@ -54,8 +59,21 @@ if 'restaurants' not in st.session_state:
         }
     ]
 
+# Mock Data (Pre-processed by AI Fast Track)
+if 'restaurants' not in st.session_state:
+    init_mock_data()
+
 def show_main_dashboard():
-    st.title("🛵 LINE MAN Wongnai: AI Fast Track Dashboard")
+    col_title, col_reset = st.columns([5, 1])
+    with col_title:
+        st.title("🛵 LINE MAN Wongnai: AI Fast Track Dashboard")
+    with col_reset:
+        st.write("") # Spacing
+        st.write("")
+        if st.button("🔄 Reset Demo", use_container_width=True):
+            init_mock_data()
+            st.rerun()
+
     st.markdown("""
     **Restaurant Content Validation**
     
