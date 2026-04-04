@@ -9,6 +9,7 @@ st.set_page_config(
     page_icon="🛵",
     initial_sidebar_state="collapsed"
 )
+
 # Hide Streamlit header, menu, and footer
 hide_st_style = """
             <style>
@@ -74,12 +75,12 @@ if 'restaurants' not in st.session_state:
     init_mock_data()
 
 def show_main_dashboard():
-    col_title, col_reset = st.columns([5, 1])
+    col_title, col_reset = st.columns([5, 1.5])
     with col_title:
         st.title("🛵 LINE MAN Wongnai: AI Fast Track Dashboard")
     with col_reset:
         st.write("") # Spacing
-        st.write("")
+        st.markdown("<p style='text-align: right; font-size: 12px; margin-bottom: 0px;'>กรุณากดปุ่ม Reset ทุกครั้งที่เข้าใช้ Demo</p>", unsafe_allow_html=True)
         if st.button("🔄 Reset Demo", use_container_width=True):
             init_mock_data()
             st.rerun()
