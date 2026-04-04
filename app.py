@@ -9,6 +9,16 @@ st.set_page_config(
     page_icon="🛵",
     initial_sidebar_state="collapsed"
 )
+# Hide Streamlit header, menu, and footer
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            [data-testid="stHeader"] {display: none;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Function to initialize or reset mock data
 def init_mock_data():
