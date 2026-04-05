@@ -48,7 +48,7 @@ def init_mock_data():
         },
         {
             "id": "RES-8802",
-            "name": "Ghost Kitchen 99 (Duplicate)", 
+            "name": "Ghost Kitchen 99", 
             "status": "Requires Review", 
             "risk": "High", 
             "issue": "Agent A: Exact match found in Wongnai Blacklist DB (Known Fraudulent Entity).", 
