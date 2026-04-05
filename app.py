@@ -77,7 +77,8 @@ if 'restaurants' not in st.session_state:
 def show_main_dashboard():
     col_title, col_reset = st.columns([5, 1.5])
     with col_title:
-        st.title("🛵 LINE MAN Wongnai: AI Fast Track Dashboard")
+        st.title("🛵 LINE MAN Wongnai: AI "Restaurant Content
+Validation Dashboard")
     with col_reset:
         st.write("") # Spacing
         st.markdown("<p style='text-align: right; font-size: 12px; margin-bottom: 0px;'>กรุณากดปุ่ม Reset ทุกครั้งที่เข้าใช้ Demo</p>", unsafe_allow_html=True)
@@ -86,8 +87,6 @@ def show_main_dashboard():
             st.rerun()
 
     st.markdown("""
-    **Restaurant Content Validation**
-    
     This AI-driven workflow reduces the manual validation bottleneck from **3-5 days to under 5 minutes**. 
     It ingests data from Salesforce and Google Drive, processes it through specialized AI agents against the 15-page brand checklist, and routes only exceptions to human agents.
     """)
