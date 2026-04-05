@@ -48,7 +48,7 @@ def init_mock_data():
         },
         {
             "id": "RES-8802",
-            "name": "สมหมาย Kitchen 99", 
+            "name": "Ghost Kitchen 99", 
             "status": "Requires Review", 
             "risk": "High", 
             "issue": "Agent A: Exact match found in Wongnai Blacklist DB (Known Fraudulent Entity).", 
@@ -77,8 +77,7 @@ if 'restaurants' not in st.session_state:
 def show_main_dashboard():
     col_title, col_reset = st.columns([5, 1.5])
     with col_title:
-        st.title("🛵 LINE MAN Wongnai: AI "Restaurant Content
-Validation Dashboard")
+        st.title("🛵 LINE MAN Wongnai: AI Fast Track Dashboard")
     with col_reset:
         st.write("") # Spacing
         st.markdown("<p style='text-align: right; font-size: 12px; margin-bottom: 0px;'>กรุณากดปุ่ม Reset ทุกครั้งที่เข้าใช้ Demo</p>", unsafe_allow_html=True)
@@ -87,6 +86,8 @@ Validation Dashboard")
             st.rerun()
 
     st.markdown("""
+    **Restaurant Content Validation**
+    
     This AI-driven workflow reduces the manual validation bottleneck from **3-5 days to under 5 minutes**. 
     It ingests data from Salesforce and Google Drive, processes it through specialized AI agents against the 15-page brand checklist, and routes only exceptions to human agents.
     """)
