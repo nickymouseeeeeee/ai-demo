@@ -312,7 +312,7 @@ def show_case_detail(res_id):
             st.rerun()
             
     with col_yes:
-        if st.button("✅ อนุมัติทันที (Human Override)", use_container_width=True):
+        if st.button("✅ อนุมัติทันที", use_container_width=True):
             st.warning("พนักงานยืนยันการอนุมัติ (Override) กำลังนำร้านขึ้นสู่ระบบ Wongnai Prod DB...")
             # Update state to simulate it being handled
             res["status"] = "Auto-Approved"
