@@ -332,7 +332,7 @@ with col_reset:
         init_mock_data()
         st.rerun()
 
-tab1, tab2 = st.tabs(["Merchant Journey)", "Validator Journey"])
+tab1, tab2 = st.tabs(["Merchant Journey", "Validator Journey"])
 
 with tab1:
     show_merchant_tab()
