@@ -153,7 +153,7 @@ def show_merchant_tab():
                 if st.button("✅ เข้าใจแล้ว ฉันจะไปอัปโหลดรูปภาพใหม่", use_container_width=True):
                     st.success("ขอบคุณครับ! ระบบกำลังรอรูปภาพใหม่จาก G-Drive...")
             with col_disagree:
-                if st.button("⚖️ ฉันไม่เห็นด้วย นี่ไม่ใช่แอลกอฮอล์ / ขอส่งให้พนักงานตรวจ (Dispute)", use_container_width=True):
+                if st.button("⚖️ ฉันไม่เห็นด้วย นี่ไม่ใช่แอลกอฮอล์ / ขอส่งให้พนักงานตรวจ", use_container_width=True):
                     st.session_state.simulation_type = "Fallback"
                     st.session_state.merchant_submission_status = "Disputed"
                     st.rerun()
@@ -332,7 +332,7 @@ with col_reset:
         init_mock_data()
         st.rerun()
 
-tab1, tab2 = st.tabs(["📲 การใช้งานฝั่งร้านค้า (Merchant Journey)", "🛡️ แดชบอร์ดพนักงานตรวจรับ (Validator Journey)"])
+tab1, tab2 = st.tabs(["Merchant Journey)", "Validator Journey"])
 
 with tab1:
     show_merchant_tab()
